@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "fc033a2c-52f3-4258-acac-b70f63ea6d12",
+		"name": "Join",
+		"description": "2019年招新页面 API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "部门ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_host}}/departments",
+					"host": [
+						"{{api_host}}"
+					],
+					"path": [
+						"departments"
+					]
+				},
+				"description": "请求此接口获取部门的 名称-ID 对照"
+			},
+			"response": [
+				{
+					"name": "部门ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_host}}/departments",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Aug 2019 13:36:21 +0000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Aug 2019 13:36:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private, must-revalidate"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "ETag",
+							"value": "\"c17ef3ddda796ba6705434713903c631d07be051\""
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"代码部门\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"交互部门\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"市场部门\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"媒体部门\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "添加申请者",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "许**",
+							"description": "申请者姓名",
+							"type": "text"
+						},
+						{
+							"key": "college",
+							"value": "**书院",
+							"description": "申请者所在书院",
+							"type": "text"
+						},
+						{
+							"key": "class",
+							"value": "机类***",
+							"description": "申请者班级",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "男",
+							"description": "申请者性别",
+							"type": "text"
+						},
+						{
+							"key": "birthday",
+							"value": "20**-**-**",
+							"description": "申请者生日",
+							"type": "text"
+						},
+						{
+							"key": "cellphone",
+							"value": "151****7128",
+							"description": "申请者电话号码",
+							"type": "text"
+						},
+						{
+							"key": "qq",
+							"value": "100****77",
+							"description": "申请者QQ号码",
+							"type": "text"
+						},
+						{
+							"key": "department_id",
+							"value": "1",
+							"description": "申请的部门ID，请求“部门ID”接口以获取",
+							"type": "text"
+						},
+						{
+							"key": "wanna_say",
+							"value": "我也没啥好说的",
+							"description": "申请者留言",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api_host}}/applicants",
+					"host": [
+						"{{api_host}}"
+					],
+					"path": [
+						"applicants"
+					]
+				},
+				"description": "请求此接口以添加新的申请者，该接口仅返回 201 Created 响应头，空响应体。\n\n注意：此接口未提供字段验证，空字段可能会引发错误。请在前端添加字段验证。"
+			},
+			"response": [
+				{
+					"name": "添加申请者",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "许志轩",
+									"description": "申请者姓名",
+									"type": "text"
+								},
+								{
+									"key": "college",
+									"value": "文治书院",
+									"description": "申请者所在书院",
+									"type": "text"
+								},
+								{
+									"key": "class",
+									"value": "机类738",
+									"description": "申请者班级",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "男",
+									"description": "申请者性别",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "2000-01-14",
+									"description": "申请者生日",
+									"type": "text"
+								},
+								{
+									"key": "cellphone",
+									"value": "15129877128",
+									"description": "申请者电话号码",
+									"type": "text"
+								},
+								{
+									"key": "qq",
+									"value": "1003132577",
+									"description": "申请者QQ号码",
+									"type": "text"
+								},
+								{
+									"key": "department_id",
+									"value": "1",
+									"description": "申请的部门ID，请求“部门ID”接口以获取",
+									"type": "text"
+								},
+								{
+									"key": "wanna_say",
+									"value": "我也没啥好说的",
+									"description": "申请者留言",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_host}}/applicants",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"applicants"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Aug 2019 13:51:12 +0000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Aug 2019 13:51:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private, must-revalidate"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"da39a3ee5e6b4b0d3255bfef95601890afd80709\""
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
