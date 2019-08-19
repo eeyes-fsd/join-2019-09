@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('admin', 'PagesController@admin')->middleware('auth')->name('pages.admin');
+
+Route::get('login', 'LoginController@create')->name('login');
+Route::post('login', 'LoginController@login')->name('login');
+Route::post('logout', 'LoginController@logout')->name('logout');
